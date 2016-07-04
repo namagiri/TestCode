@@ -1,4 +1,5 @@
 FROM node:4.1.2
+MAINTAINER Vishal Sharma
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -14,3 +15,10 @@ COPY . /usr/src/app
 EXPOSE 8080
 
 CMD [ "npm", "start" ]
+
+# Add deploy script
+ADD deploy.sh /usr/src/app/deploy.sh
+RUN chmod +x /usr/src/app/deploy.sh
+
+# Run deploy script
+CMD ["/usr/src/app/deploy.sh"]
