@@ -14,11 +14,11 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
-
 # Add deploy script
 ADD deploy.sh /usr/src/app/deploy.sh
 RUN chmod +x /usr/src/app/deploy.sh
 
 # Run deploy script
 CMD ["/usr/src/app/deploy.sh"]
+
+CMD [ "npm", "start" ]
