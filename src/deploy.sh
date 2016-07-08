@@ -1,5 +1,5 @@
 #!/bin/bash
-
+eval "$(docker-machine env default)"
 docker pull svishal/testcode
 docker stop testcode
 docker rm testcode
